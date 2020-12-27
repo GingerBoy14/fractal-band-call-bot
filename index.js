@@ -40,6 +40,7 @@ bot.on("sticker", async (ctx) => {
   if (stickerSetName === STICKER_SET_NAME) {
     console.log(stickerSetName);
     try {
+      ctx.reply();
       const sticker = await ctx.getStickerSet(stickerSetName);
 
       console.log(`sticker: ${sticker}`, sticker);
