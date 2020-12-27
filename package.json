@@ -1,7 +1,6 @@
 {
   "name": "fractalbandcall-bot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -14,5 +13,15 @@
   },
   "engines": {
     "node": "14.x"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GingerBoy14/fractal-band-call-bot.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/GingerBoy14/fractal-band-call-bot/issues"
+  },
+  "homepage": "https://github.com/GingerBoy14/fractal-band-call-bot#readme",
+  "description": ""
 }
