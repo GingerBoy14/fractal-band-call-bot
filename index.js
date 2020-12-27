@@ -38,13 +38,10 @@ bot.help((ctx) => ctx.reply("Call someone from band"));
 bot.on("sticker", async (ctx) => {
   const stickerSetName = ctx.message.sticker.set_name;
   if (stickerSetName === STICKER_SET_NAME) {
-    console.log(stickerSetName);
     try {
-      ctx.reply();
+      ctx.reply(); // BAD
       const sticker = await ctx.getStickerSet(stickerSetName);
 
-      console.log(`sticker: ${sticker}`, sticker);
-      console.log(`sticker: ${sticker.stickers}`);
       const id = sticker.stickers.findIndex(
         ({ file_id }) => file_id === ctx.message.sticker.file_id
       );
