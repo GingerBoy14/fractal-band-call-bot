@@ -42,7 +42,7 @@ bot.on("sticker", (ctx) => {
     ctx
       .getStickerSet(stickerSetName)
       .then((sticker) => {
-        console.log(`sticker: ${sticker}`)
+        console.log(`sticker: ${sticker}`,sticker)
         console.log(`sticker: ${sticker.stickers}`)
         const id = sticker.stickers.findIndex(
           ({ file_id }) => file_id === ctx.message.sticker.file_id
