@@ -36,14 +36,21 @@ bot.start((ctx) => ctx.reply("Hello Fractal Band"));
 bot.help((ctx) => ctx.reply("Call someone from band"));
 
 bot.on("sticker", (ctx) => {
-  if (ctx.message.sticker.set_name === STICKER_SET_NAME) {
+  const stickerSetName = ctx.message.sticker.set_name
+  if ( stickerSetName === STICKER_SET_NAME) {
+    console.log(stickerSetName);
     ctx
-      .getStickerSet(ctx.message.sticker.set_name)
+      .getStickerSet(stickerSetName)
       .then((sticker) => {
+        console.log(`sticker: ${sticker}`)
+        console.log(`sticker: ${sticker.stickers}`)
         const id = sticker.stickers.findIndex(
           ({ file_id }) => file_id === ctx.message.sticker.file_id
         );
-        return ctx.reply(call[id].who);
+        if (call[id]) {
+           return ctx.reply(call[id].who);
+        }
+       
       })
       .catch((err) => ctx.reply(`Maxim invalid =( ${err}`));
   }
