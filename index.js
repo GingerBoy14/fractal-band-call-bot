@@ -54,6 +54,14 @@ bot.on("sticker", async (ctx) => {
   }
 });
 
+bot.mention("everyone", (ctx) => {
+  let text = "";
+  for (let i = 17; i <= 23; i++) {
+    text += ` ${call[i].who}`;
+  }
+  return ctx.reply(text);
+});
+
 if (process.env.NODE_ENV === "production") {
   bot.telegram.setWebhook(`${URL}/bot${BOT_TOKEN}`);
   bot.startWebhook(`/bot${BOT_TOKEN}`, null, PORT);
